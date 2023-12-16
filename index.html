@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Red+Hat+Display:wght@500;700;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  
+  <script defer src="scripts.js"></script>
+
+  <script>
+    function radioSelected() {
+      let a = document.getElementById('custom');
+      a.value = '';
+    }
+    function customSelected() {
+      let a = document.querySelector('input[type="radio"]:checked');
+      a.checked = false
+    } 
+  </script>
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="div-img">
+    <img src="images/logo.svg" class="logo">
+  </div>
+
+  <main>  
+
+    <div class="calculator">
+
+      <section class="price-detail-section">
+
+        <fieldset class="bill">
+          <legend>Bill</legend>
+          <input type="number" placeholder="0" id="total-price">
+        </fieldset>
+
+        <fieldset>
+          <legend>Select Tip %</legend>
+          <div class="tip-choices"> 
+            <label for="percent-5" class="tip percent">
+              <input type="radio" name="tip-percent" value="0.05" id="percent-5" onclick="radioSelected()"> 
+              5%
+            </label>
+            <label for="percent-10" class="tip percent">
+              <input type="radio" name="tip-percent" value="0.1" id="percent-10" onclick="radioSelected()"> 
+              10%
+            </label>
+            <label for="percent-15" class="tip percent">
+              <input type="radio" name="tip-percent" value="0.15" id="percent-15" onclick="radioSelected()"> 
+              15%
+            </label>
+            <label for="percent-25" class="tip percent">
+              <input type="radio" name="tip-percent" value="0.25" id="percent-25" onclick="radioSelected()"> 
+              25%
+            </label>
+            <label for="percent-50" class="tip percent">
+              <input type="radio" name="tip-percent" value="0.5" id="percent-50" onclick="radioSelected()"> 
+              50%
+            </label>
+            <label for="custom" class="tip custom">
+              <input id="custom" name="custom" placeholder="Custom" onclick="customSelected()">
+            </label>
+                
+          </div>
+        </fieldset>
+
+        <fieldset class="number-of-people">
+          <legend>Number of People</legend>
+          <div class="num-people-div">
+            <span class="warning-text">Can't be zero</span>
+            <input type="number" placeholder="0" id="num-people">
+            
+          </div>
+        </fieldset>
+        
+      </section>
+
+      <section class="result-section">
+
+        <div class="result-flex">
+          <div>
+            <p class="white-text">Tip Amount</p>
+            <span class="per-person">/ person</span>
+          </div>
+          <div class="calculated-result">&#36;<span id="tip-per-person">0.00</span></div>
+        </div>
+
+        <div class="result-flex">
+          <div>
+            <p class="white-text">Total</p>
+            <span class="per-person">/ person</span>
+          </div>
+          <div class="calculated-result">&#36;<span id="total-per-person">0.00</span></div>
+        </div>
+
+        <button id="button" class="disabled">RESET</button>
+
+      </section>
+      
+    </div>
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Wannika123" target="_blank">Wannika</a>.
+  </div>
+
+</body>
+</html>

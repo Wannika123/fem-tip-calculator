@@ -1,0 +1,242 @@
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: var(--light-grayish-cyan);
+    font-family: 'Space Mono';
+}
+
+.div-img {
+    text-align: center;
+    padding-top: 100px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.calculator {
+    width: 55rem;
+    height: 28rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 60px;
+}
+
+@media (max-width: 25rem) {
+    .div-img {
+        padding-top: 40px;
+    }
+    .calculator {
+        margin-top: 40px;
+        grid-template-columns: unset;
+        width: 100%;
+        height: unset;
+        border-bottom-left-radius: unset;
+        border-bottom-right-radius: unset;
+    }
+}
+
+section {
+   margin: 1.5rem;
+}
+
+.price-detail-section {
+    padding: 10px;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin-bottom: 2.1rem;
+}
+
+legend {
+    color: var(--grayish-cyan);
+    font-size: 0.875rem;
+    padding-bottom: 8px;
+}
+
+input {
+    background-color: var(--very-light-grayish-cyan);
+    border: 0;
+    font-size: 1.5rem;
+    text-align: right;
+    font-family: 'Space Mono';
+    padding: 0.3rem;
+    padding-right: 10px;
+    border-radius: 7px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    outline-color: var(--strong-cyan);
+}
+
+input[type='number'] {
+    width: 100%;
+    /* remove arrow for Firefox */
+    -moz-appearance: textfield; 
+}
+
+/* remove arrow for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+ 
+.bill > input {
+    background-image: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+
+.tip-choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tip {
+    width: 31%;
+    text-align: center;
+    margin: 0.25rem 0;
+    border-radius: 7px;
+}
+
+@media (max-width: 25rem) {
+    .price-detail-section {
+        margin-bottom: 0;
+    }
+    fieldset {
+        margin-bottom: 1.5rem;
+    }
+    .tip {
+        width: 47%;
+    }
+}
+
+.tip:hover {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+   display: none;
+}
+
+label {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.percent {
+    background-color: var(--very-dark-cyan);
+    padding: 0.3rem;
+}
+
+.percent:has(input[type="radio"]:checked) {
+    color: var(--very-dark-cyan);
+    background-color: hsl(172, 78%, 54%);
+}   
+
+#custom {
+    width: 100%;   
+}
+ 
+.number-of-people > input {
+    background-image: url(images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+
+.num-people-div {
+    position: relative;
+}
+
+.warning-text {
+    position: absolute;
+    color: red;
+    font-size: 0.875rem;
+    top: -1.5rem;
+    right: 0;
+    visibility: hidden;
+}
+
+.result-section {
+    background-color: var(--very-dark-cyan);
+    border-radius: 12px;
+    padding: 35px;
+}
+
+.result-flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0;
+}
+
+.white-text {
+    color: white;
+    padding-top: 10px;
+}
+
+.per-person {
+    font-size: 0.8rem;
+    color: var(--grayish-cyan);
+    opacity: 0.8;
+    position: relative;
+    top: -5px;
+}
+
+.calculated-result {
+    font-size: 2.5rem;
+    color: var(--strong-cyan);
+}
+
+button {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.25rem;
+    border-radius: 7px;
+    margin-top: 35%;
+    border: none;
+    background-color: hsl(172, 58%, 68%);
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+}
+
+@media (max-width: 40rem) {
+    .result-section {
+        margin-top: 0;
+    }
+    button {
+        margin-top: 2rem;
+    }
+}
+
+.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.active {
+    cursor: pointer;
+}
